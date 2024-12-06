@@ -35,5 +35,35 @@
         </div>
     </div>
 
+    <script>
+        let firstNumber = "";
+        let secondNumber = "";
+        let operator = "";
+
+
+        function add(firstNumber,secondNumber) {
+            let result = firstNumber + secondNumber;
+            return result;
+        }
+
+        function subtract(firstNumber,secondNumber) {
+            let result = firstNumber - secondNumber;
+            return result;
+        }
+
+        function multiply(firstNumber,secondNumber) {
+            let result = firstNumber * secondNumber;
+            return result;
+        }
+
+        function divide(firstNumber,secondNumber) {
+            if (secondNumber === 0) {
+                return "Dividing by zero will break the calculator.";
+            } else {
+                let result = firstNumber / secondNumber;
+                return result;
+            }
+        }
+    </script>
 </body>
 </html>
