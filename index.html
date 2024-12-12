@@ -42,11 +42,19 @@
 
         let buttons = document.querySelectorAll('button');
 
+        function updateDisplay(firstNumber) {
+            let display = document.querySelector('.display');
+            display.innerText = firstNumber;
+        }
+
         buttons.forEach(button => {
             button.addEventListener("click", () => {
                 console.log(button.innerText);
+            //  updateDisplay(firstNumber);
             })
         })
+
+        /* Calculate function for the four operators.  Use switch statement instead of what I did below */
 
 
         /* function add(firstNumber,secondNumber) {
