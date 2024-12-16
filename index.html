@@ -36,17 +36,19 @@
     </div>
 
     <script>
-        let firstNumber = "";
-        let secondNumber = "";
-        let operator = "";
+        let firstNumber = null;
+        let currentNumber = "";
+        let operator = null;
 
         let buttons = document.querySelectorAll('button');
 
+        // ** Trying to update Display with calculation 
         function updateDisplay(firstNumber) {
             let display = document.querySelector('.display');
             display.innerText = firstNumber;
         }
 
+        // Console logs when User presses a calculator button. 
         buttons.forEach(button => {
             button.addEventListener("click", () => {
                 console.log(button.innerText);
@@ -54,8 +56,28 @@
             })
         })
 
+        /* Calculator Button Click Function */
+        function buttonClick(value) {
+            if (typeof value === 'number') {
+                currentNumber = currentNumber + value;
+                updateDisplay(currentNumber);
+            } else if (value === "+" || value === "-" || value === "*" || value === "/") {
+                firstNumber = parseFloat(currentNumber);
+                operator = value;
+                currentNumber = "";
+                updateDisplay(operator);
+            } else if (value === "=") {
+                /* write this later.. */
+            }
+        }  
+
+        
+
+
+
         /* Calculate function for the four operators.  Use switch statement instead of what I did below */
 
+        
 
         /* function add(firstNumber,secondNumber) {
             let result = firstNumber + secondNumber;
