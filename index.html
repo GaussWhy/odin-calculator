@@ -76,7 +76,27 @@
 
 
         /* Calculate function for the four operators.  Use switch statement instead of what I did below */
-
+        function calculate (firstNumber, secondNumber, operator) {
+            switch (operator) {
+                case "+":
+                    return firstNumber + secondNumber;
+                    break;
+                case "-":
+                    return firstNumber - secondNumber;
+                    break;
+                case "*": 
+                    return firstNumber * secondNumer;
+                    break;
+                case "/":
+                    if (secondNumber === "0") {
+                        return "Error: I cannot divide by 0.  Please try again"
+                    } else {
+                        return firstNumber / secondNumber;
+                    }
+                    default: 
+                    return "If you see this message, this means you are actively looking to break the calculator.  Press Alt + F4 to finish the job."
+            }
+        }
         
 
         /* function add(firstNumber,secondNumber) {
