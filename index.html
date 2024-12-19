@@ -52,22 +52,34 @@
         buttons.forEach(button => {
             button.addEventListener("click", () => {
                 console.log(button.innerText);
-            //  updateDisplay(firstNumber);
+                buttonClick(button.innerText);
             })
         })
 
         /* Calculator Button Click Function */
         function buttonClick(value) {
-            if (typeof value === 'number') {
+            if (typeof value === 'number') { // Numbers 0-9
                 currentNumber = currentNumber + value;
                 updateDisplay(currentNumber);
-            } else if (value === "+" || value === "-" || value === "*" || value === "/") {
+            } else if (value === "+" || value === "-" || value === "*" || value === "/") { // Four Operators
                 firstNumber = parseFloat(currentNumber);
                 operator = value;
                 currentNumber = "";
                 updateDisplay(operator);
-            } else if (value === "=") {
-                /* write this later.. */
+            } else if (value === "=") { // Equals Button
+                if (currentNumber !== "" && firstNumber !== null && operator !== null) {
+                    let convert = parseFloat(currentNumber);
+                    let answer = calculate(firstNumber, secondNumber, operator);
+                    currentNumber = answer.toString();
+                    updateDisplay(currentNumber);
+                    firstNumber = null;
+                    operator = null;
+                }
+            } else { // Clear Button
+                currentNumber = "";
+                firstNumber = null;
+                operator = null;
+                updateDisplay("Display Cleared..."); //This always seem to display when you click on a Number button.
             }
         }  
 
