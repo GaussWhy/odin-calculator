@@ -48,6 +48,7 @@
             display.innerText = firstNumber;
         }
 
+    
         // Console logs when User presses a calculator button. 
         buttons.forEach(button => {
             button.addEventListener("click", () => {
@@ -55,11 +56,14 @@
                 buttonClick(button.innerText);
             })
         })
+    
 
         /* Calculator Button Click Function */
         function buttonClick(value) {
-            if (typeof value === 'number') { // Numbers 0-9
-                currentNumber = currentNumber + value;
+            if (value === "0" || value === "1" || value === "2" || value === "3" || value === "4" || value === "5" || value === "6" || value === "7" || value === "8" || value === "9") { // Numbers 0-9
+                currentNumber = parseInt(value);
+                console.log(typeof(value));
+                // updateDisplay(value);
                 updateDisplay(currentNumber);
             } else if (value === "+" || value === "-" || value === "*" || value === "/") { // Four Operators
                 firstNumber = parseFloat(currentNumber);
@@ -69,7 +73,7 @@
             } else if (value === "=") { // Equals Button
                 if (currentNumber !== "" && firstNumber !== null && operator !== null) {
                     let convert = parseFloat(currentNumber);
-                    let answer = calculate(firstNumber, secondNumber, operator);
+                    let answer = calculate(firstNumber, currentNumber, operator);
                     currentNumber = answer.toString();
                     updateDisplay(currentNumber);
                     firstNumber = null;
@@ -79,11 +83,16 @@
                 currentNumber = "";
                 firstNumber = null;
                 operator = null;
-                updateDisplay("Display Cleared..."); //This always seem to display when you click on a Number button.
+                updateDisplay("- - -");
             }
         }  
 
-        
+        /*
+                    if (typeof value === 'number') { // Numbers 0-9
+                currentNumber = currentNumber + value;
+                updateDisplay(value);
+                // updateDisplay(currentNumber);
+        */
 
 
 
@@ -96,7 +105,7 @@
                 case "-":
                     return firstNumber - secondNumber;
                     break;
-                case "*": 
+                case "*": // This part is not working properly. 
                     return firstNumber * secondNumer;
                     break;
                 case "/":
