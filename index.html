@@ -109,7 +109,7 @@
                     return firstNumber * secondNumber; // I wrote secondNunber as secondNumer
                     break;
                 case "/":
-                    if (secondNumber === "0") {
+                    if (secondNumber == "0") { // Before I had written ===.  This would cause the answer to be "Infinity" if you tried to divide a number by 0.
                         return "Error: I cannot divide by 0.  Please try again"
                     } else {
                         return firstNumber / secondNumber;
