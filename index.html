@@ -57,14 +57,14 @@
             })
         })
         
-        //ERROR to Look into: How to do calculations with double/triple digit numbers 
 
         /* Calculator Button Click Function */
         function buttonClick(value) {
             if (value === "0" || value === "1" || value === "2" || value === "3" || value === "4" || value === "5" || value === "6" || value === "7" || value === "8" || value === "9") { // Numbers 0-9
-                currentNumber = parseInt(value);
-                console.log(currentNumber);
-                console.log(typeof(currentNumber));
+                // currentNumber = parseInt(value);  
+                currentNumber = currentNumber + value;  // This is the fix that allows calculations with double/trible digit numbers
+                // console.log(currentNumber);
+                // console.log(typeof(currentNumber));
                 // updateDisplay(value);
                 updateDisplay(currentNumber);
             } else if (value === "+" || value === "-" || value === "*" || value === "/") { // Four Operators
@@ -102,6 +102,8 @@
         function calculate (firstNumber, secondNumber, operator) {
             switch (operator) {
                 case "+":
+                    firstNumber = parseInt(firstNumber);
+                    secondNumber = parseInt(secondNumber); // Need to include this otherwise it will concatenate the two numbers rather than add them
                     return firstNumber + secondNumber;
                     break;
                 case "-":
