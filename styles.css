@@ -1,9 +1,43 @@
 .buttons {
     width: 50%;
+    height: 500px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    place-self: center;
+
 }
 
 .calculator {
-    border: 2px solid black;
+    display: grid;
+}
+
+.display {
+    place-self: center;
+    font-size: 50px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+
+button {
+    border-radius: 15%;
+    font-size: 50px;
+    /* background-color:slategray; */
+    color:black;
+    background-color:steelblue; 
+    margin: 5px;
+    border: 1px solid steelblue;
+    
+}
+
+button:hover {
+    cursor: pointer;
+   /* background-color: lightslategray; */
+   background-color: lightsteelblue;
+}
+
+h1 {
+    text-align: center;
+    border-bottom: 2px solid black;
+    width: 50%;
+    margin: auto;
 }
