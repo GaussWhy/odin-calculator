@@ -40,6 +40,12 @@
         </div>
     </div>
 
+    <div class="instructions">
+        <div id="instructions"><u>Instructions</u></div>
+        <div><br>This online calculator allows you to do the four basic mathematical operations with integers. Click on a number to begin.  Once the calculation is done, press the "C" button to clear the display. <br> <br> Be on the lookout for Version 2.0 coming next year.  Version 2.0 will add support for floating point numbers, as well as color picker options to change the color of the calculator buttons. <br> <br></div>
+        <div>Designed by GaussWhy © 2024</div>
+    </div>
+    <!--
     <div>
         <h2>Color Picker</h2>
         <div class="extra-credit-buttons">
@@ -48,15 +54,14 @@
             <button id="color-picker-mcd">McDonalds</button>
             <button id="color-picker-og">Original</button>
         </div>
-       
-    </div>
+    -->
 
     <script>
         let firstNumber = null;
         let currentNumber = "";
         let operator = null;
 
-        let buttons = document.querySelectorAll('button');
+        const buttons = document.querySelectorAll('button');
 
         // Updates Display with calculation 
         function updateDisplay(firstNumber) {
@@ -138,12 +143,7 @@
                     return "If you see this message, this means you are actively looking to break the calculator.  Press Alt + F4 to finish the job."
             }
         }
-        
-        let colorpicker1 = document.getElementById('color-picker-bw');
-        colorpicker1.addEventListener('click', () => {
-            colorpicker1.style.color = 'white';
-            colorpicker1.style.background = 'black';
-        });
+
 
         /* function add(firstNumber,secondNumber) {
             let result = firstNumber + secondNumber;
