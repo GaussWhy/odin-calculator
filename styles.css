@@ -12,6 +12,7 @@
 }
 
 .display {
+    
     place-self: center;
     font-size: 50px;
     margin-bottom: 15px;
@@ -26,6 +27,7 @@ button {
     background-color:steelblue; 
     margin: 5px;
     border: 1px solid steelblue;
+    font-family: "Chivo Mono", serif;
     
 }
 
@@ -37,7 +39,24 @@ button:hover {
 
 h1 {
     text-align: center;
-    border-bottom: 2px solid black;
+    border-bottom: 5px double black;
     width: 50%;
     margin: auto;
+    font-size: 50px;
+}
+
+body {
+    font-family: "Chivo Mono", serif;
+
+}
+
+h2 {
+    text-align: center;
+}
+
+.extra-credit-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }

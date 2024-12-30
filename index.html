@@ -5,11 +5,15 @@
     <meta charset="utf-8">
     <title>Calculator Project</title>
     <link rel="stylesheet" href="styles.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
-    <h1>Integer Calculator : Version 1.0</h1>
+    <h1>Online Calculator Version 1.0</h1>
     <div class="calculator">
         <div class="display">Click On A Number</div>
         <!-- Calculator Buttons [4x4 setup]-->
@@ -36,11 +40,15 @@
         </div>
     </div>
 
-    <div class="extra-credit-buttons">
+    <div>
         <h2>Color Picker</h2>
-        <button class="color-picker">Black/White</button>
-        <button class="color-picker">Neon(Pink/Green?)</button>
-        <button class="color-picker">McDonalds</button>
+        <div class="extra-credit-buttons">
+            <button class="button-bw" id="color-picker-bw">Black/White</button>
+            <button class="button-neon" id="color-picker-neon">Neon(Pink/Green?)</button>
+            <button id="color-picker-mcd">McDonalds</button>
+            <button id="color-picker-og">Original</button>
+        </div>
+       
     </div>
 
     <script>
@@ -131,6 +139,11 @@
             }
         }
         
+        let colorpicker1 = document.getElementById('color-picker-bw');
+        colorpicker1.addEventListener('click', () => {
+            colorpicker1.style.color = 'white';
+            colorpicker1.style.background = 'black';
+        });
 
         /* function add(firstNumber,secondNumber) {
             let result = firstNumber + secondNumber;
